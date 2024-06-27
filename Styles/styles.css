@@ -31,19 +31,48 @@ body{
     padding: 20px;
     margin: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
     overflow: hidden;
     height:60vh;
+    border-radius: 8px;
 }
-
 #pending {
     background-color: #ffecb3;
 }
-
 #completed {
     background-color: #c8e6c9;
 }
-
 #past-due {
     background-color: #ffcdd2;
+}
+.create {
+    background-color: rgba(91, 183, 236, 0.61);
+    color: black;
+    border-radius: 8px;
+    border-color: rgba(247, 249, 250, 0.61);
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+.ticket {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color:black;
+    background-color: #fdf0ca;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.ticket input, textarea {
+    background-color:#fadb7c ;
+    border-radius:  8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.ticket span {
+    font-size: x-small ;
+}
+.mark {
+    border-radius: 8px;
+    background-color:#c8e6c9;
+    height: 2vh;
+    font-size: x-small;
 }
