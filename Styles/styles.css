@@ -1,0 +1,49 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(91, 183, 236, 0.61);
+    color: rgb(0, 0, 0);
+    height: 5vh;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 10px;
+    min-width: 50px;
+}
+.column {
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    height:60vh;
+}
+
+#pending {
+    background-color: #ffecb3;
+}
+
+#completed {
+    background-color: #c8e6c9;
+}
+
+#past-due {
+    background-color: #ffcdd2;
+}
