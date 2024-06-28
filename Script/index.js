@@ -9,7 +9,13 @@ function markComplete(refreshbtn,ticket,markbtn) {
     if (refreshbtn) {
         refreshbtn.removeEventListener('click', updateTime)
         refreshbtn.disabled= true
-}
+    }
+    let assignBtn = ticket.querySelector('.assign')
+    let assignTo = ticket.querySelector ('.assign-to')
+    if (assignBtn) {
+        assignBtn.remove()
+        assignTo.remove()
+    }
 }
 
 function updateTime(dueInput) {
@@ -42,12 +48,12 @@ setInterval(updateTime, 1000)
 
 let btn= document.getElementsByClassName("create")[0]
 btn.addEventListener('click', addNewTask)
+
 function addNewTask() {
     let ticket=document.createElement('div')
     ticket.classList.add('ticket')
     
     let dueTime = new Date()
-    
     ticket.setAttribute('data-due-time', dueTime.toISOString())
 
     let titleInput = document.createElement('input')
@@ -80,12 +86,26 @@ function addNewTask() {
     taskInfo.appendChild(timeSpan)
     taskInfo.appendChild(refreshbtn)
 
+    let assignBtn = document.createElement('button')
+    assignBtn.textContent = 'Assign Task'
+    assignBtn.classList.add('assign')
+    assignBtn.addEventListener('click', function() {
+        let assignTo=document.createElement('input')
+        assignTo.setAttribute('type', 'email')
+        assignTo.setAttribute('placeholder', 'Enter user(s) email(s)')
+        assignTo.classList.add('assign-to')
+        ticket.appendChild(assignTo)
+    })
+    
+
     ticket.appendChild(titleInput)
     ticket.appendChild(descriptionInput)
     ticket.appendChild(dueInput)
     ticket.appendChild(taskInfo)
     ticket.appendChild(markbtn)   
     newtask.append(ticket)
+    ticket.appendChild(assignBtn)
+    
     markbtn.addEventListener('click', function() {
     markComplete (refreshbtn,ticket,markbtn)
 })

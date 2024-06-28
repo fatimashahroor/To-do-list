@@ -51,6 +51,8 @@ body{
     border-color: rgba(247, 249, 250, 0.61);
     box-shadow:0 0 20px rgba(0, 0, 0, 0.1);
     font-weight: bold;
+    cursor: pointer;
+
 }
 .ticket {
     display: flex;
@@ -59,7 +61,7 @@ body{
     justify-content: center;
     color:black;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 .ticket input, textarea {
     background-color: rgba(255, 255, 255, 0.61);
@@ -91,10 +93,23 @@ body{
     color: rgba(0, 0, 0, 0.61);
     justify-content:  center;
 }
+.assign {
+    background-color: rgba(91, 183, 236, 0.61);
+    color: black;
+    border-radius: 8px;
+    border-color: rgba(247, 249, 250, 0.61);
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    height: 2vh;
+    cursor: pointer;
+}
 
 @media (max-width:590px) {
     .container {
         flex-direction: column;
+        height: 100vh;
     }
 }
 @media (max-width: 590px) {
