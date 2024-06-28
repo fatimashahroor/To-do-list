@@ -58,21 +58,49 @@ body{
     align-items: flex-start;
     justify-content: center;
     color:black;
-    background-color: #fdf0ca;
     border-radius: 8px;
     margin-bottom: 10px;
 }
 .ticket input, textarea {
-    background-color:#fadb7c ;
+    background-color: rgba(255, 255, 255, 0.61);
     border-radius:  8px;
     font-family: Arial, Helvetica, sans-serif;
+    border-color:rgba(0, 0, 0, 0.1);
 }
 .ticket span {
-    font-size: x-small ;
+    font-size: small ;
+    font-weight: bold;
 }
 .mark {
     border-radius: 8px;
-    background-color:#c8e6c9;
+    background-color:#b7ebb9;
     height: 2vh;
     font-size: x-small;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+.refresh {
+    font-size: x-small;
+    background-color: #b7ebb9;
+    border-color: none;
+    border: none;
+    border-radius: 8px;
+}
+.task-info {
+    display: flex;
+    flex-flow: row wrap;
+    color: rgba(0, 0, 0, 0.61);
+    justify-content:  center;
+}
+
+@media (max-width:590px) {
+    .container {
+        flex-direction: column;
+    }
+}
+@media (max-width: 590px) {
+    .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        height:fit-content
+    }
 }
