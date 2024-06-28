@@ -110,6 +110,7 @@ body{
     .container {
         flex-direction: column;
         height: 100vh;
+        align-content: center;
     }
 }
 @media (max-width: 590px) {

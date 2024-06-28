@@ -22,23 +22,25 @@ function updateTime(dueInput) {
     let now = new Date()
     document.querySelectorAll('.ticket').forEach(ticket =>{
         let timeSpan = ticket.querySelector('.time-span')
-        let dueTime = new Date(ticket.dataset.dueTime)
- 
-        if (dueInput && !ticket.classList.contains('complete') && now>= dueTime) {
+        let dueTime = dueInput ? new Date(dueInput) : null
+        console.log(now)
+        console.log(dueTime)
+        if (dueTime && !ticket.classList.contains('complete') && now>= dueTime) {
             past.appendChild(ticket)
-        }
-        let hours = now.getHours()
-        let minutes = now.getMinutes().toString().padStart(2, '0')
-        let period = hours >= 12 ? 'PM' : 'AM'
-        hours = hours % 12 || 12
-        let time = `${hours}:${minutes} ${period}`
+        } else {
+            let hours = now.getHours()
+            let minutes = now.getMinutes().toString().padStart(2, '0')
+            let period = hours >= 12 ? 'PM' : 'AM'
+            hours = hours % 12 || 12
+            let time = `${hours}:${minutes} ${period}`
 
-        let year = now.getFullYear();
-        let month = (now.getMonth() + 1).toString().padStart(2, '0')
-        let day = now.getDate().toString().padStart(2, '0')
-        let date = `${month}-${day}-${year}`
-        if (timeSpan) {
-            timeSpan.textContent = `${date} / ${time}`
+            let year = now.getFullYear();
+            let month = (now.getMonth() + 1).toString().padStart(2, '0')
+            let day = now.getDate().toString().padStart(2, '0')
+            let date = `${month}-${day}-${year}`
+            if (timeSpan) {
+                timeSpan.textContent = `${date} / ${time}`
+            }
         }
     })
 }
@@ -96,8 +98,6 @@ function addNewTask() {
         assignTo.classList.add('assign-to')
         ticket.appendChild(assignTo)
     })
-    
-
     ticket.appendChild(titleInput)
     ticket.appendChild(descriptionInput)
     ticket.appendChild(dueInput)
@@ -108,5 +108,6 @@ function addNewTask() {
     
     markbtn.addEventListener('click', function() {
     markComplete (refreshbtn,ticket,markbtn)
-})
+    })
+
 }
